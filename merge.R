@@ -1,4 +1,4 @@
-## library is first stranded
+## library is reverse stranded
  files =list.files(path="star_align",recursive=T,pattern="ReadsPerGene.out.tab",full.names=T)
          for (file in files)
          {
