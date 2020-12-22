@@ -17,3 +17,4 @@ Major steps in the workflow are:
 ## III Input requirements
 1) config.yaml
 2) sample_names.txt
+3) merged fastq files stored in directory: merged_fastq/
