@@ -14,7 +14,7 @@ Major steps in the workflow are:
 5) multiqc
 6) star
 7) R
-## III Input requirements
+## III. Input requirements
 1) config.yaml
 2) sample_names.txt
 3) merged fastq files stored in directory: merged_fastq/
