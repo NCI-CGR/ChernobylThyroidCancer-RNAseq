@@ -87,7 +87,8 @@ rule star_align:
            "star_index/complete.txt"
         output:
            "star_align/{sample}/{sample}Aligned.sortedByCoord.out.bam",
-           "star_align/{sample}/{sample}ReadsPerGene.out.tab"
+           "star_align/{sample}/{sample}ReadsPerGene.out.tab",
+           "star_align/{sample}/{sample}Log.final.out"
         threads:24
         params:
            index="star_index"
