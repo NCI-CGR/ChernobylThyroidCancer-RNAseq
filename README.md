@@ -1,1 +1,1 @@
-# Chernobyl-Thyroid-Cancer---RNA-seq-QC-and-Alignment
+# Chernobyl Thyroid Cancer - RNA-seq QC and Alignment
