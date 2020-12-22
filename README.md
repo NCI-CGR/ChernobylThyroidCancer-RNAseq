@@ -7,12 +7,12 @@ Major steps in the workflow are:
 3) Aligning trimmed reads to GRCh38 human reference genome (illumine iGenomes NCBI GRCh38) using STAR
 4) Merging reads-count tables of all samples
 ## II. Dependencies
-1) python
-2) snakemake
-3) trimmomatic
-4) fastqc
-5) multiqc
-6) star
+1) Python
+2) Snakemake
+3) Trimmomatic
+4) Fastqc
+5) Multiqc
+6) Star
 7) R
 ## III. Input requirements
 1) config.yaml
