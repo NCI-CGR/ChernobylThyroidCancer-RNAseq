@@ -14,3 +14,6 @@ Major steps in the workflow are:
 5) multiqc
 6) star
 7) R
+## III Input requirements
+1) config.yaml
+2) sample_names.txt
