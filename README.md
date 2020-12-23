@@ -18,4 +18,4 @@ Major steps in the workflow are:
 1) config.yaml
 2) sample_names.txt
 3) merged fastq files stored in directory: merged_fastq/
-4) reference genome sequence and annotation file
+4) reference genome sequence and annotation files
