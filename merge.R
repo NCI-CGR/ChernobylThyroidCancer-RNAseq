@@ -17,5 +17,5 @@
          sample_names
          colnames(rc)=sample_names[,1]
          head(rc)
-         write.csv(rc,"reads_count.csv")
+         write.csv(rc,"reads_count/reads_count.csv")
 
