@@ -94,7 +94,7 @@ rule star_align:
            index="star_index"
         shell:
            """
-           STAR --runThreadN 24 --genomeDir {params.index} --readFilesIn {input[1]} {input[2]} --outFileNamePrefix star_align/{wildcards.sample}/{wildcards.sample} --readFilesCommand zcat --sjdbGTFfile {input[0]} --sjdbOverhang 124 --quantMode GeneCounts --outSAMtype BAM SortedByCoordinate --twopassMode Basic 2>log/{wildcards.sample}_star_align.err
+           STAR --runThreadN 24 --genomeDir {params.index} --readFilesIn {input[1]} {input[2]} --outFileNamePrefix star_align/{wildcards.sample}/{wildcards.sample} --readFilesCommand zcat --sjdbGTFfile {input[0]} --sjdbOverhang 149 --quantMode GeneCounts --outSAMtype BAM SortedByCoordinate --twopassMode Basic 2>log/{wildcards.sample}_star_align.err
            """
 
 rule multiqc:
@@ -111,13 +111,12 @@ rule multiqc:
           """
           multiqc pretrim_qc/. --title preQC -o pretrim_qc 2>log/multiqc_preqc.err
           multiqc posttrim_qc/. --title postQC -o posttrim_qc/ 2>log/multiqc_postqc.err
-          rm -r star_align/log
           mkdir star_align/log
           cp star_align/*/*Log.final.out star_align/log
           multiqc star_align/log/. --title star_align -o star_align/log 2>log/multiqc_star.err
           """
 
-##library is first stranded
+##library is reverse stranded
 rule merge:
    input:  expand("star_align/{sample}/{sample}ReadsPerGene.out.tab",sample = config["samples"])
    output:"reads_count/reads_count.csv"
