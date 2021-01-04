@@ -8,7 +8,7 @@ Major steps in the workflow are:
 4) Merging reads-count tables of all samples
 ## II. Dependencies
 1) Python
-2) Snakemake
+2) [Snakemake](https://snakemake.readthedocs.io/en/stable/)
 3) Trimmomatic
 4) Fastqc
 5) Multiqc
