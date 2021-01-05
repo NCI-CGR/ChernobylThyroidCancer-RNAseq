@@ -16,6 +16,6 @@ Major steps in the workflow are:
 * [R](https://www.r-project.org)
 ## III. Input requirements
 * [config.yaml](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/blob/main/config.yaml)
-* sample_names.txt
+* [sample_names.txt](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/blob/main/sample_names.txt)
 * merged fastq files stored in directory: merged_fastq/
 * reference genome sequence and annotation files
