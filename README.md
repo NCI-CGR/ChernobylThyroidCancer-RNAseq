@@ -20,3 +20,4 @@ Major steps in the workflow are:
 * [sample_names.txt](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/blob/main/sample_names.txt)
 * [merged fastq files stored in directory: merged_fastq/](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/tree/main/merged_fastq)
 * reference genome sequence and annotation files
+## IV. 
