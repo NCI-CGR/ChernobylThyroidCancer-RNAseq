@@ -20,4 +20,58 @@ Major steps in the workflow are:
 * [sample_names.txt](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/blob/main/sample_names.txt)
 * [merged fastq files stored in directory: merged_fastq/](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/tree/main/merged_fastq)
 * reference genome sequence and annotation files
-## IV. 
+## IV. Working directory structure
+```bash
+.
+├── config.yaml
+├── merged_fastq
+│   ├── {sample}_merged_R1.fastq.gz
+│   └── {sample}_merged_R2.fastq.gz
+├── merge.R
+├── posttrim_qc
+│   ├── posttrim_qc_multiqc_report.html
+│   ├── {sample}_filtered_1P_fastqc.html
+│   ├── {sample}_filtered_1P_fastqc.zip
+│   ├── {sample}_filtered_2P_fastqc.html
+│   └── {sample}_filtered_2P_fastqc.zip
+├── pretrim_qc
+│   ├── pretrim_qc_multiqc_report.html
+│   ├── {sample}_merged_R1_fastqc.html
+│   ├── {sample}_merged_R1_fastqc.zip
+│   ├── {sample}_merged_R2_fastqc.html
+│   └── {sample}_merged_R2_fastqc.zip
+├── reads_count
+│   └── reads_count.csv
+├── run.sh
+├── sample_names.txt
+├── Snakefile
+├── snakemake.batch
+├── star_align
+│   ├── log
+│   │   └── star_align_multiqc_report.html
+│   └── {sample}
+│       ├── {sample}Aligned.sortedByCoord.out.bam
+│       ├── {sample}Log.final.out
+│       └── {sample}ReadsPerGene.out.tab
+├── star_index
+│   ├── chrLength.txt
+│   ├── chrNameLength.txt 
+│   ├── chrName.txt 
+│   ├── chrStart.txt 
+│   ├── exonGeTrInfo.tab 
+│   ├── exonInfo.tab 
+│   ├── geneInfo.tab 
+│   ├── Genome 
+│   ├── genomeParameters.txt 
+│   ├── SA 
+│   ├── SAindex 
+│   ├── sjdbInfo.txt 
+│   ├── sjdbList.fromGTF.out.tab 
+│   ├── sjdbList.out.tab 
+│   └── transcriptInfo.tab 
+└── trimmed
+    ├── {sample}_filtered_1P.fq.gz
+    ├── {sample}_filtered_1U.fq.gz
+    ├── {sample}_filtered_2P.fq.gz
+    └── {sample}_filtered_2U.fq.gz
+```
