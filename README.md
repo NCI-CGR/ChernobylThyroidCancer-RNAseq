@@ -20,7 +20,14 @@ Major steps in the workflow are:
 * [sample_names.txt](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/blob/main/sample_names.txt)
 * [merged fastq files stored in directory: merged_fastq/](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/tree/main/merged_fastq)
 * reference genome sequence and annotation files
-## IV. Working directory structure
+## IV. Output
+* Trimmed reads in directory: trimmed/
+* QC reports of pre-trimmed reads in direcotry: pretrim_qc/
+* QC reports of post-trimmed reads in direcotry: posttrim_qc/
+* STAR index in directory: star_index/
+* STAR alignent results and statistics reports in directory : star_align/
+* merged reads count table: reads_count/reads_count.csv
+## V. Working directory structure
 ```bash
 .
 ├── config.yaml
