@@ -3,16 +3,25 @@
 ## vim: ft=python
 import sys
 import os
-from snakemake.utils import R
+import glob
+import itertools
 
 shell.prefix("set -eo pipefail; ")
-configfile:"config.yaml"
 localrules: all
 
+# define wildcards
+def parse_sampleID(fname):
+    return fname.split('/')[-1].split('_')[0]
+
+file = sorted(glob.glob('merged_fastq/*.fastq.gz'), key=parse_sampleID)
+
+d = {}
+for key, value in itertools.groupby(file, parse_sampleID):
+    d[key] = list(value)
 
 rule all:
     input:
-          expand("star_align/{sample}/{sample}Aligned.sortedByCoord.out.bam",sample=config["samples"]),
+          expand("star_align/{sample}/{sample}Aligned.sortedByCoord.out.bam",sample=d.keys()),
           "pretrim_qc/preQC_multiqc_report.html",
           "posttrim_qc/postQC_multiqc_report.html",
           "star_align/log/star_align_multiqc_report.html",
@@ -96,9 +105,9 @@ rule star_align:
 
 rule multiqc:
     input:
-          expand("pretrim_qc/{sample}_merged_R1_fastqc.html",sample=config["samples"]),
-          expand("posttrim_qc/{sample}_filtered_1P_fastqc.html",sample=config["samples"]),
-          expand("star_align/{sample}/{sample}Log.final.out",sample=config["samples"])
+          expand("pretrim_qc/{sample}_merged_R1_fastqc.html",sample=d.keys()),
+          expand("posttrim_qc/{sample}_filtered_1P_fastqc.html",sample=d.keys()),
+          expand("star_align/{sample}/{sample}Log.final.out",sample=d.keys())
     output:
           "pretrim_qc/preQC_multiqc_report.html",
           "posttrim_qc/postQC_multiqc_report.html",
@@ -116,7 +125,7 @@ rule multiqc:
 ##library is reverse stranded
 rule merge:
     input:  
-          expand("star_align/{sample}/{sample}ReadsPerGene.out.tab",sample = config["samples"])
+          expand("star_align/{sample}/{sample}ReadsPerGene.out.tab",sample=d.keys())
     output:
           "reads_count/reads_count.csv"
     shell:
