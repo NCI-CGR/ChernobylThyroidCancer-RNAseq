@@ -16,7 +16,6 @@ Major steps in the workflow are:
 * [Star](https://github.com/alexdobin/STAR)
 * [R](https://www.r-project.org)
 ## III. Input requirements
-* [config.yaml](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/blob/main/config.yaml)
 * [sample_names.txt](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/blob/main/sample_names.txt)
 * [merged fastq files stored in directory: merged_fastq/](https://github.com/NCI-CGR/ChernobylThyroidCancer-RNAseq/tree/main/merged_fastq)
 * reference genome sequence and annotation files
@@ -30,7 +29,6 @@ Major steps in the workflow are:
 ## V. Working directory structure
 ```bash
 .
-├── config.yaml
 ├── log
 │   └── log files
 ├── merged_fastq
